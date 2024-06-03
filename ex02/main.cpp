@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
+/*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:24:47 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/05/30 11:29:03 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/06/03 13:27:14 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main(void){
 
     // Test copying the array
     std::cout << "Testing copy constructor with the integer array" << std::endl;
-    Array<int> copyArray = intArray;
+    Array<int> copyArray(intArray);
     std::cout << "Copied array: ";
     printArray(copyArray);
 	std::cout << std::endl;

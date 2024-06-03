@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
+/*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:24:36 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/05/30 11:01:45 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/06/03 13:43:16 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ template<typename T>
 Array<T>::Array(size_t n): _data(new T[n]), _size(n){}
 
 template<typename T>
-Array<T>::Array(const Array &src){*this = src;}
+Array<T>::Array(const Array &src) : _data(nullptr), _size(0){*this = src;}
 	
 template<typename T>
 Array<T>::~Array(){delete [] this->_data;}
@@ -28,8 +28,7 @@ template<typename T>
 Array<T> 	&Array<T>::operator=(const Array &rhs){
 	if (this != &rhs)
 	{
-		if (this->_size != 0)
-			delete[] this->_data;
+		delete[] this->_data;
 		this->_size = rhs.getSize();
 		this->_data = new T[this->_size];
 		for (size_t i = 0; i < this->_size; ++i)

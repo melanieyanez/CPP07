@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
+/*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:24:22 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/05/30 10:49:37 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/06/03 13:14:24 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
-# include <string>
-# include <iostream>
+#include <string>
+#include <iostream>
 
 template<typename T>
-class Array{
+class Array {
 
 	public:
 
@@ -32,10 +32,10 @@ class Array{
 
 		size_t 		getSize() const;
 
-		class OutOfBoundsException : public std::exception{
+		class OutOfBoundsException : public std::exception {
         	const char* what() const throw() {
             	return "Index out of bounds";
-        }
+        	}
     };
 	
 	private:
