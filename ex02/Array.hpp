@@ -6,7 +6,7 @@
 /*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:24:22 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/06/03 13:14:24 by myanez-p         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:56:12 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class Array {
 		~Array();
 
 		Array 		&operator=(const Array &rhs);
-		T 			&operator[](size_t index) const;
+		T			&operator[](size_t index);
+		const T		&operator[](size_t index) const;
 
 		size_t 		getSize() const;
 

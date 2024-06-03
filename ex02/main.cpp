@@ -6,7 +6,7 @@
 /*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:24:47 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/06/03 13:27:14 by myanez-p         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:10:13 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,22 @@ int main(void){
     for (size_t i = 0; i < assignArray.getSize(); ++i)
         std::cout << "Element " << i << ": " << assignArray[i] << std::endl;
 	std::cout << std::endl;
+
+      // Test with a non-const array of floats to add values
+    std::cout << "Creating an array of floats of size 4" << std::endl;
+    Array<float> nonConstFloatArray(4);
+    for (size_t i = 0; i < nonConstFloatArray.getSize(); ++i) {
+        nonConstFloatArray[i] = i * 1.1f;
+    }
+    std::cout << "Non-const float array: ";
+    printArray(nonConstFloatArray);
+
+    // Make the array const and test access
+    const Array<float> constFloatArray(nonConstFloatArray);
+    std::cout << "Const float array: ";
+    printArray(constFloatArray);
+    //constFloatArray[0] = 3.14f;
+    std::cout << std::endl;
 
     // Test exceptions for out-of-bounds access
     std::cout << "Testing exceptions for out-of-bounds access" << std::endl;

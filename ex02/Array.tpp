@@ -6,7 +6,7 @@
 /*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:24:36 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/06/03 13:43:16 by myanez-p         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:55:15 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,14 @@ Array<T> 	&Array<T>::operator=(const Array &rhs){
 }
 
 template<typename T>
-T 	&Array<T>::operator[](size_t index) const{
+T	&Array<T>::operator[](size_t index){
+	if (index >= this->_size)
+		throw OutOfBoundsException();
+	return this->_data[index];
+}
+
+template<typename T>
+const T	&Array<T>::operator[](size_t index) const{
 	if (index >= this->_size)
 		throw OutOfBoundsException();
 	return this->_data[index];
